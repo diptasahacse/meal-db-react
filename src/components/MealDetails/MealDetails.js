@@ -11,7 +11,6 @@ const MealDetails = () => {
             .then(meal => setMeal(meal.data.meals[0]))
 
     }, [])
-    console.log(meal)
     const {strCategory,strMeal,strMealThumb,strSource,strTags,strInstructions} = meal;
     return (
         <Container>
@@ -19,11 +18,10 @@ const MealDetails = () => {
                 <Card.Img className='w-100' style={{height: "350px"}} variant="top" src={strMealThumb} />
                 <Card.Body>
                     <Card.Title>{strMeal}</Card.Title>
-                    <Card.Text>
-                        {
-                            strInstructions
-                        }
-                    </Card.Text>
+                    <Card.Text> <strong>Instruction : </strong> {strInstructions}</Card.Text>
+                    <p><strong>Tags: </strong>{strTags}</p>
+                    <p><strong>Catagory: </strong>{strCategory}</p>
+                    <p><strong>Source: </strong>{strSource}</p>
                 </Card.Body>
             </Card>
         </Container>
